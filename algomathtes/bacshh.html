@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Halaman Ganti Konten</title>
+  <style>
+    .halaman {
+      display: none;
+    }
+    .halaman.aktif {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <button onclick="gantiHalaman('home')">Home</button>
+    <button onclick="gantiHalaman('tentang')">Tentang</button>
+    <button onclick="gantiHalaman('kontak')">Kontak</button>
+  </nav>
+
+  <div id="home" class="halaman aktif">
+    <h1>Home</h1>
+    <p>Ini halaman Home.</p>
+  </div>
+
+  <div id="tentang" class="halaman">
+    <h1>Tentang</h1>
+    <p>Ini halaman Tentang.</p>
+  </div>
+
+  <div id="kontak" class="halaman">
+    <h1>Kontak</h1>
+    <p>Ini halaman Kontak.</p>
+  </div>
+
+  <script>
+    function gantiHalaman(id) {
+      document.querySelectorAll('.halaman').forEach(el => {
+        el.classList.remove('aktif');
+      });
+      document.getElementById(id).classList.add('aktif');
+    }
+  </script>
+
+</body>
+</html>
