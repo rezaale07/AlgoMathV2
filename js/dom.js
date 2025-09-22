@@ -1,4 +1,3 @@
-// ====== DOM SELECTORS ======
 const dom = {
     startScreen: document.getElementById("start-screen"),
     categorySelection: document.getElementById("category-selection"),
@@ -14,4 +13,4 @@ const dom = {
     multiplayerHud: document.querySelector(".multiplayer-hud"),
     playerNames: document.getElementById("player-names"),
     playerCount: document.getElementById("player-count")
-  };
+};

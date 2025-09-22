@@ -13,7 +13,7 @@ window.addEventListener("click", unlockAudio, { once: true });
 window.addEventListener("touchstart", unlockAudio, { once: true });
 
 const audioManager = {
-  bgMusic: document.getElementById("bg-music"),
+  bgMusic: document.getElementById("backsound"),
   sounds: {
     correct: new Audio("item/correct-choice-43861.mp3"),
     wrong: new Audio("item/wrong-47985.mp3"),

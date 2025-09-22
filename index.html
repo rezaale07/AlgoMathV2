@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
-    <audio id="bg-music" src="item/bg-music.mp3" autoplay loop></audio>
+    <audio id="backsound" src="item/backsound.mp3" autoplay loop></audio>
     <div id="music-controls">
       <button id="toggle-music">🔇</button>
       <div class="volume-control">
@@ -23,45 +22,49 @@
       </div>
     </div>
 
-    <!-- Halaman Awal --><div id="start-screen" class="game-screen start-left">
-  <div class="math-bg"></div>
-  <div class="screen-content">
-    <div class="left-content">
-      <div class="game-title">
-        <h1>AlgoMath</h1>
-        <div class="title-decoration">
-          <span class="math-symbol">∑</span>
-          <span class="math-symbol">∫</span>
-          <span class="math-symbol">π</span>
-        </div>
-      </div>
-      
-      <div class="start-container">
-        <div class="input-group animated">
-          <div class="input-wrapper">
-            <input type="text" id="player-name" placeholder="Nama" />
-            <span class="input-icon">👤</span>
+    <!-- Halaman Awal -->
+    <div id="start-screen" class="game-screen start-left">
+      <div class="math-bg"></div>
+      <div class="screen-content">
+        <div class="left-content">
+          <div class="game-title">
+            <h1>AlgoMath</h1>
+            <div class="title-decoration">
+              <span class="math-symbol">∑</span>
+              <span class="math-symbol">∫</span>
+              <span class="math-symbol">π</span>
+            </div>
           </div>
-          <div class="input-wrapper">
-            <input type="text" id="player-class" placeholder="Kelas" />
-            <span class="input-icon">🏫</span>
-          </div>
-        </div>
 
-        <div class="button-group">
-          <button id="start-button" class="glow-button">
-            <span class="button-icon">▶️</span>
-            Mode Sendiri
-          </button>
-          <button id="multiplayer-button" class="glow-button multiplayer-btn">
-            <span class="button-icon">👥</span>
-            Mode Multiplayer
-          </button>
+          <div class="start-container">
+            <div class="input-group animated">
+              <div class="input-wrapper">
+                <input type="text" id="player-name" placeholder="Nama" />
+                <span class="input-icon">👤</span>
+              </div>
+              <div class="input-wrapper">
+                <input type="text" id="player-class" placeholder="Kelas" />
+                <span class="input-icon">🏫</span>
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button id="start-button" class="glow-button">
+                <span class="button-icon">▶️</span>
+                Mulai
+              </button>
+              <button
+                id="multiplayer-button"
+                class="glow-button multiplayer-btn"
+              >
+                <span class="button-icon">👥</span>
+                Multiplayer
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
     <!-- Pilih Kategori -->
     <div id="category-selection" class="game-screen" style="display: none">
@@ -122,16 +125,13 @@
           <!-- Player inputs will be generated here -->
         </div>
 
-        <div class="game-options">
+        <div id="category-select" class="game-options">
           <div class="category-select">
             <h3>Pilih Kategori</h3>
             <select id="multiplayer-category" class="styled-select">
-              <option value="fun">Fun Questions</option>
-              <!--
-                Jika kamu ada data kategori multiplayer lain di JS, tambah di sini:
-                <option value="knowledge">Knowledge Quiz</option>
-                <option value="riddles">Riddles</option>
-              -->
+              <option value="sejarah">Sejarah</option>
+              <option value="ipa">Ipa</option>
+              <option value="bahasa">Bahasa Indonesia</option>
             </select>
           </div>
           <div class="difficulty-select">
@@ -147,19 +147,16 @@
           Mulai Permainan <span class="btn-icon">🎮</span>
         </button>
         <button onclick="goBack()" class="back-btn">kembali</button>
-
-      </div>
+      </div>  
     </div>
 
     <!-- Game -->
     <div id="game-container" class="game-screen" style="display: none">
       <div class="multiplayer-hud" style="display: none"></div>
       <div class="hud">
-        <div id="stats">
-          <div id="score">Skor: 0</div>
-          <div id="timer">⏱️ 00:30</div>
-        </div>
-        <div id="lives">❤️❤️❤️</div>
+        <div id="score"></div>
+        <div id="lives"></div>
+        <div id="timer"></div>
       </div>
       <div class="question-container">
         <h2 id="question"></h2>
@@ -190,7 +187,7 @@
     <div id="game-over" class="game-screen" style="display: none">
       <h2>Game Over</h2>
       <div class="stats-container">
-        <p>Skor: <span id="final-score"></span></p>
+        <p> <span id="final-score"></span></p>
         <p id="level-status"></p>
       </div>
       <div class="retry-buttons">
@@ -239,13 +236,13 @@
       </div>
     </div>
 
-    <script src="data-questions.js"></script>
-    <script src="config.js"></script>
-    <script src="audio.js"></script>
-    <script src="utils.js"></script>
-    <script src="dom.js"></script>
-    <script src="multiplayer.js"></script>
-    <script src="singleplayer.js"></script>
-    <script src="main.js"></script>
+    <script src="/js/data-questions.js"></script>
+    <script src="/js/config.js"></script>
+    <script src="/js/audio.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/dom.js"></script>
+    <script src="/js/multiplayer.js"></script>
+    <script src="/js/singleplayer.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
